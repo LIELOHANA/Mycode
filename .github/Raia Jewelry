@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raia Jewelry</title>
+    <style>
+        /* עיצוב כללי */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f5f0;
+            color: #5c5149;
+            direction: rtl;
+        }
+
+        /* כותרת ולוגו */
+        header {
+            text-align: center;
+            background-color: #f3e6dc;
+            padding: 40px 20px;
+            border-bottom: 2px solid #d6c6b8;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #8a6e5a;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 5px;
+        }
+
+        header h1 span {
+            font-style: italic;
+            color: #a67a65;
+        }
+
+        /* תפריט ניווט */
+        nav {
+            background-color: #f3e6dc;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            margin: 0 20px;
+            color: #5c5149;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #8a6e5a;
+        }
+
+        /* עיצוב הבאנר */
+        section.banner {
+            background: linear-gradient(to bottom, #f3e6dc, #ffffff);
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        section.banner h2 {
+            color: #8a6e5a;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        section.banner p {
+            font-size: 1.2em;
+            color: #5c5149;
+        }
+
+        /* עיצוב המוצרים */
+        .products {
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product {
+            background-color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            color: #8a6e5a;
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .product p {
+            margin: 5px 0 15px;
+            color: #5c5149;
+        }
+
+        /* צור קשר */
+        #contact {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #contact form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #contact label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        #contact input,
+        #contact textarea,
+        #contact button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #d4c4b7;
+            border-radius: 5px;
+        }
+
+        #contact button {
+            background-color: #8a6e5a;
+            color: #fff;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background-color: #6e5241;
+        }
+
+        /* תחתית */
+        footer {
+            background-color: #f3e6dc;
+            text-align: center;
+            padding: 20px;
+            color: #5c5149;
+            border-top: 2px solid #d6c6b8;
+        }
+
+        /* הסרת קו תחתון לכל הלינקים */
+        a {
+            text-decoration: none !important;
+        }
+
+        /* עיצוב הכפתור חזרה למעלה */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8a6e5a;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: none; /* הכפתור מוסתר בהתחלה */
+            transition: opacity 0.3s ease;
+        }
+
+        #back-to-top:hover {
+            background-color: #6e5241;
+        }
+
+        /* עיצוב רספונסיבי */
+        @media (max-width: 768px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product {
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav a {
+                font-size: 1em;
+            }
+
+            section.banner h2 {
+                font-size: 2em;
+            }
+
+            section.banner p {
+                font-size: 1.1em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Raia <span>Jewelry</span></h1>
+</header>
+
+<nav>
+    <a href="#home">בית</a>
+    <a href="#rings">טבעות</a>
+    <a href="#necklaces">שרשראות</a>
+    <a href="#bracelets">צמידים</a>
+    <a href="#contact">צור קשר</a>
+</nav>
+
+<section class="banner" id="home">
+    <h2>יוקרה ואלגנטיות</h2>
+    <p>גילוי הקולקציה היוקרתית שלנו ומציאת התכשיט המושלם עבורך.</p>
+</section>
+
+<section class="products" id="rings">
+    <div class="product">
+        <a href="https://ibb.co/VthXRMw">
+            <img src="https://i.ibb.co/6mp6zDX/80e87e4c3b0182743b00559eeb3b9feb.jpg" alt="80e87e4c3b0182743b00559eeb3b9feb">
+            <h3>טבעות כסף</h3>
+            <p>הטבעות היפות ביותר שעשויות מכסף 925</p>
+        </a>
+    </div>
+    <div class="product">
+        <a href="https://ibb.co/kSXYJ1M">
+            <img src="https://i.ibb.co/vjk2hYD/ad4e369d02261a9f7384cf77dabdc79f.jpg" alt="ad4e369d02261a9f7384cf77dabdc79f">
+            <h3>טבעות זהב</h3>
+            <p>טבעות בעבודת יד בזהב 18 קראט</p>
+        </a>
+    </div>
+    <div class="product">
+        <a href="https://ibb.co/kgYFnhH">
+            <img src="https://i.ibb.co/3ytHX0r/223b20ea5a8b476a49467d9b63752e22.jpg" alt="223b20ea5a8b476a49467d9b63752e22">
+            <h3>טבעות יוקרה</h3>
+            <p>טבעות יוקרה מעוצבות עם אבני חן ייחודיות</p>
+        </a>
+    </div>
+</section>
+
+<section class="products" id="necklaces">
+    <div class="product">
+        <a href="https://ibb.co/VthXRMw">
+            <img src="https://i.ibb.co/6mp6zDX/80e87e4c3b0182743b00559eeb3b9feb.jpg" alt="80e87e4c3b0182743b00559eeb3b9feb">
+            <h3>שרשראות כסף</h3>
+            <p>שרשראות עדינות עשויות מכסף 925</p>
+        </a>
+    </div>
+    <div class="product">
+        <a href="https://ibb.co/kSXYJ1M">
+<img src="https://i.ibb.co/vjk2hYD/ad4e369d02261a9f7384cf77dabdc79f.jpg" alt="ad4e369d02261a9f7384cf77dabdc79f">
+            <h3>שרשראות זהב</h3>
+            <p>שרשראות מעוצבות בזהב 18 קראט</p>
+        </a>
+    </div>
+    <div class="product">
+        <a href="https://ibb.co/kgYFnhH">
+            <img src="https://i.ibb.co/3ytHX0r/223b20ea5a8b476a49467d9b63752e22.jpg" alt="223b20ea5a8b476a49467d9b63752e22">
+            <h3>שרשראות יוקרה</h3>
+            <p>שרשראות מעוצבות עם אבני חן איכותיות</p>
+        </a>
+    </div>
+</section>
+
+<section class="products" id="bracelets">
+    <div class="product">
+        <a href="https://ibb.co/VthXRMw">
+            <img src="https://i.ibb.co/6mp6zDX/80e87e4c3b0182743b00559eeb3b9feb.jpg" alt="80e87e4c3b0182743b00559eeb3b9feb">
+            <h3>צמידים כסף</h3>
+            <p>צמידים עשויים מכסף 925 בעיצובים מיוחדים</p>
+        </a>
+    </div>
+    <div class="product">
+        <a href="https://ibb.co/kSXYJ1M">
+            <img src="https://i.ibb.co/vjk2hYD/ad4e369d02261a9f7384cf77dabdc79f.jpg" alt="ad4e369d02261a9f7384cf77dabdc79f">
+            <h3>צמידי זהב</h3>
+            <p>צמידים בעבודת יד מזהב 18 קראט</p>
+        </a>
+    </div>
+    <div class="product">
+        <a href="https://ibb.co/kgYFnhH">
+            <img src="https://i.ibb.co/3ytHX0r/223b20ea5a8b476a49467d9b63752e22.jpg" alt="223b20ea5a8b476a49467d9b63752e22">
+            <h3>צמידי יוקרה</h3>
+            <p>צמידים יוקרתיים מעוצבים עם אבני חן</p>
+        </a>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>צור קשר</h2>
+    <form action="#">
+        <label for="name">שם מלא</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">אימייל</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">הודעה</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">שלח</button>
+    </form>
+</section>
+<section id="testimonials">
+    <h2 style="text-align: center; color: #8a6e5a; padding: 40px 0;">חוות דעת לקוחות</h2>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 0 20px;">
+        <div style="background-color: #ffffff; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
+            <p style="color: #5c5149; font-style: italic;">״הטבעת שרכשתי פשוט מהממת! קיבלתי מחמאות מכל עבר. תודה רבה על השירות המקצועי!״</p>
+            <p style="font-weight: bold; color: #8a6e5a;">- מיכל, תל אביב</p>
+        </div>
+        <div style="background-color: #ffffff; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
+            <p style="color: #5c5149; font-style: italic;">״שירות מדהים, המשלוח הגיע מהר מאוד והצמיד פשוט מושלם! מומלץ בחום.״</p>
+            <p style="font-weight: bold; color: #8a6e5a;">- יעל, ירושלים</p>
+        </div>
+        <div style="background-color: #ffffff; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
+            <p style="color: #5c5149; font-style: italic;">״פעם ראשונה שאני מזמינה מכם, ואני בטוח שאחזור שוב! חוויית קנייה נהדרת.״</p>
+            <p style="font-weight: bold; color: #8a6e5a;">- רועי, חיפה</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Raia Jewelry | כל הזכויות שמורות</p>
+</footer>
+<button id="back-to-top" onclick="scrollToTop()">↑</button>
+
+<script>
+    // הצגת כפתור חזרה למעלה כאשר הגולש גולל למטה
+    window.onscroll = function() {
+        let backToTopButton = document.getElementById('back-to-top');
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    };
+
+    // פונקציה לגילול חזרה למעלה
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
