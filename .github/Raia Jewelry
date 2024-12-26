@@ -32,6 +32,7 @@
       /* הרקע יישאר קבוע בזמן הגלילה */
     }
 
+
     /* כותרת ולוגו */
     header {
       text-align: center;
@@ -154,8 +155,6 @@
 
     .product {
       background-color: #FFFFFF;
-
-
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       overflow: hidden;
@@ -163,6 +162,7 @@
       text-align: center;
       transition: transform 0.3s;
     }
+
     .product:hover {
       transform: translateY(-10px);
     }
@@ -210,6 +210,7 @@
       border: 1px solid #FFE8C1;
       border-radius: 5px;
     }
+
     #contact button {
       background-color: #46433E;
       color: #ffffff;
@@ -348,6 +349,7 @@
     }
   </style>
 
+
   <section class="products" id="rings">
     <div class="product">
       <a href="https://ibb.co/VthXRMw">
@@ -482,4 +484,3 @@
 </body>
 
 </html>
-
