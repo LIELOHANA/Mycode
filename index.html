@@ -4,56 +4,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Raya Jewelry</title>
   <style>
-    /* עיצוב כללי */
-    body {
-      font-family: 'Georgia#000000', serif;
-      margin: 0;
-      padding: 0;
-      background-color: #F9F5F0;
-      color: #000000;
-      direction: rtl;
+    header p {
+      font-size: 2.5em;
+      /* גודל טקסט גדול יותר */
+      margin: 20px 0 0;
+      /* מרווח מעל ומתחת */
+      color: #3C2A21;
+      /* צבע כהה ומיוחד */
+      font-family: 'Times New Roman', serif;
+      /* פונט שונה ומסורתי */
+      font-weight: bold;
+      /* הטקסט מודגש */
+      font-style: italic;
+      /* טקסט באיטליק */
+      letter-spacing: 2px;
+      /* רווח בין האותיות */
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      /* צללה בולטת */
     }
-
+    
+    /* עיצוב כללי */
+    
     body {
       font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
       color: #000000;
       direction: rtl;
-      background-image: url('https://i.ibb.co/Yk5Mq6G/6d0e54e9dce4e3cf3d00ab0f0a48a5c3.jpg');
-      /* רקע טפט */
-      background-repeat: repeat;
-      /* התמונה תחזור על עצמה ברוחב ובגובה */
+      background-image: url('https://i.ibb.co/CHfKH13/7c8b65a04e8d4c80f84dadabebfe4182.jpg');
+      background-repeat: no-repeat;
       background-size: cover;
-      /* התמונה תכסה את כל הרקע של האתר */
       background-attachment: fixed;
-      /* הרקע יישאר קבוע בזמן הגלילה */
+      background-position: center;
+      animation: moveBackground 5s linear infinite;
     }
-
-
+    
+    @keyframes moveBackground {
+      from {
+        background-position: 0% 50%;
+      }
+      
+      to {
+        background-position: 50% 50%;
+      }
+    }#42445A
+    
+    /* התאמה למסכים קטנים */
+    @media (max-width: 768px) {
+      body {
+        background-size: auto 100%;
+        /* מתאים לטלפון */
+        background-attachment: scroll;
+        /* מסדר בעיות בגלילה בטלפון */
+      }
+    }
+    
+    /* התאמה למסכים גדולים */
+    @media (min-width: 769px) {
+      body {
+        background-size: cover;
+        /* מתאים למחשב */
+        background-attachment: fixed;
+      }
+    }
+    
+    
     /* כותרת ולוגו */
     header {
       text-align: center;
-      background-color: #A1A89D;
-      padding: 40px 20px;
-      border-bottom: 2px solid #D6C6B8;
+      background: linear-gradient(135deg, #C2BCAD, #A49E8D);
+      padding: 60px 20px;
+      border-bottom: 2px solid #000000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
+    
+    
     header h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       margin: 0;
       color: #21130D;
+      /* צבע לטקסט הראשי */
       font-family: 'Great Vibes', cursive;
       letter-spacing: 5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
     }
-
+    
+    header h1:hover {
+      transform: scale(1.05);
+    }
+    
     header h1 span {
       font-style: italic;
-      color: #21130D;
+      font-weight: bold;
+      color: inherit;
+      /* לוקח את הצבע של הטקסט הראשי */
     }
-
+    
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0 0;
+      color: #5E503F;
+      /* צבע עדין יותר לכיתוב המשני */
+      font-family: 'Arial', sans-serif;
+      font-style: italic;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        padding: 40px 15px;
+      }
+      
+      header h1 {
+        font-size: 2.5em;
+        letter-spacing: 3px;
+      }
+      
+      header p {
+        font-size: 1em;
+      }
+    }
+    
     /* תפריט ניווט */
     nav {
       background-color: #E0DAD0;
@@ -64,7 +140,7 @@
       z-index: 1000;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     }
-
+    
     nav a {
       margin: 0 20px;
       color: #000000;
@@ -73,13 +149,11 @@
       font-size: 1.2em;
       transition: color 0.3s;
     }
-
+    
     nav a:hover {
       color: #000000;
     }
-
-    <header><h1>Raia Jewelry</h1></header><nav><a href="#home">בית</a><a href="#about">אודות</a><a href="#shop">חנות</a><a href="#contact">צור קשר</a></nav>
-
+    
     /* עיצוב הבאנר */
     section.banner {
       background: linear-gradient(120deg, #f0e5d3, #ffffff);
@@ -93,7 +167,9 @@
       border-radius: 10px;
       animation: fadeIn 1s ease-in-out;
     }
-
+    
+    
+    
     section.banner h2 {
       color: #3c3a35;
       font-size: 3rem;
@@ -103,12 +179,12 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, color 0.3s ease;
     }
-
+    
     section.banner h2:hover {
       transform: scale(1.1);
       color: #8a7f70;
     }
-
+    
     section.banner p {
       font-size: 1.25rem;
       color: #605c54;
@@ -117,33 +193,33 @@
       margin: 0 auto;
       line-height: 1.6;
     }
-
+    
     @media (max-width: 768px) {
       section.banner {
         padding: 60px 15px;
       }
-
+      
       section.banner h2 {
         font-size: 2.5rem;
       }
-
+      
       section.banner p {
         font-size: 1rem;
       }
     }
-
+    
     @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(-10px);
       }
-
+      
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
+    
     /* עיצוב המוצרים */
     .products {
       padding: 40px 20px;
@@ -152,7 +228,7 @@
       flex-wrap: wrap;
       gap: 20px;
     }
-
+    
     .product {
       background-color: #FFFFFF;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -162,45 +238,45 @@
       text-align: center;
       transition: transform 0.3s;
     }
-
+    
     .product:hover {
       transform: translateY(-10px);
     }
-
+    
     .product img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
-
+    
     .product h3 {
       color: #605c54;
       margin: 10px 0;
       font-size: 1.5em;
     }
-
+    
     .product p {
       margin: 5px 0 15px;
       color: #48453f;
     }
-
+    
     /* צור קשר */
     #contact {
       padding: 60px 20px;
       text-align: center;
     }
-
+    
     #contact form {
       max-width: 400px;
       margin: 0 auto;
     }
-
+    
     #contact label {
       display: block;
       margin: 10px 0 5px;
       font-weight: bold;
     }
-
+    
     #contact input,
     #contact textarea,
     #contact button {
@@ -210,7 +286,7 @@
       border: 1px solid #FFE8C1;
       border-radius: 5px;
     }
-
+    
     #contact button {
       background-color: #46433E;
       color: #ffffff;
@@ -218,11 +294,11 @@
       font-size: 1.1em;
       cursor: pointer;
     }
-
+    
     #contact button:hover {
       background-color: #F0E5D3;
     }
-
+    
     /* תחתית */
     footer {
       background-color: #F0E5D3;
@@ -231,18 +307,18 @@
       color: #000000;
       border-top: 2px solid #a8a094;
     }
-
+    
     /* הסרת קו תחתון לכל הלינקים */
     a {
       text-decoration: none !important;
     }
-
+    
     /* עיצוב הכפתור חזרה למעלה */
     #back-to-top {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #FFCA70;
+      background-color: #ffb774;
       color: #ffffff;
       border: none;
       border-radius: 50%;
@@ -255,59 +331,190 @@
       /* הכפתור מוסתר בהתחלה */
       transition: opacity 0.3s ease;
     }
-
+    
     #back-to-top:hover {
-      background-col#D1AB70or: ;
+      background-color: #D1AB70;
     }
-
+    
     /* עיצוב רספונסיבי */
     @media (max-width: 768px) {
       .products {
         flex-direction: column;
         align-items: center;
       }
-
+      
       .product {
         width: 92%;
       }
-
+      
       header h1 {
         font-size: 2.5em;
       }
-
+      
       nav a {
         font-size: 1em;
       }
-
+      
       section.banner h2 {
         font-size: 2em;
       }
-
+      
       section.banner p {
         font-size: 1.1em;
       }
     }
   </style>
+  
 </head>
 
+
 <body>
-
   <header>
-    <h1>Raia <span>Jewelry</span></h1>
+    <h1 class="logo">Raia <span>Jewelry</span></h1>
+    <p>Made from the heart</p>
   </header>
-
+  
   <!-- ייבוא של Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <nav>
-    <a href="#home"><i class="fas fa-house" style="font-size: 24px; color: #333; transform: scale(0.8);"></i></a>
-    <a href="#search"><i class="fas fa-search" style="font-size: 24px; color: #333; transform: scale(0.8);"></i></a>
-    <a href="#user"><i class="fas fa-user" style="font-size: 24px; color: #333; transform: scale(0.8);"></i></a>
-    <a href="#cart"><i class="fas fa-shopping-cart" style="font-size: 24px; color: #333; transform: scale(0.8);"></i></a>
-    <a href="#menu"><i class="fas fa-bars" style="font-size: 24px; color: #333; transform: scale(0.8);"></i></a>
+  
+  <nav class="navbar">
+    <a href="#home" class="nav-item"><i class="fas fa-house"></i><span>בית</span></a>
+    <a href="#search" class="nav-item"><i class="fas fa-search"></i><span>חיפוש</span></a>
+    <a href="#user" class="nav-item"><i class="fas fa-user"></i><span>משתמש</span></a>
+    <a href="#cart" class="nav-item"><i class="fas fa-shopping-cart"></i><span>עגלה</span></a>
+    <a href="#menu" class="nav-item"><i class="fas fa-bars"></i><span>תפריט</span></a>
   </nav>
-
+  
   <style>
+    /* עיצוב ספציפי ללוגו */
+    .logo {
+      font-family: 'Georgia', serif;
+      /* פונט קלאסי ללוגו בלבד */
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0;
+      color: #000000;
+      /* צבע כהה וברור */
+    }
+    
+    .logo span {
+      color: #000000;
+      /* צבע משני לחלק מהלוגו */
+    }
+    
+    /* עיצוב טקסט מתחת ללוגו */
+    header p {
+      font-size: 14px;
+      color: #000000;
+      /* צבע עדין יותר */
+      margin: 5px 0;
+      font-family: 'Arial', sans-serif;
+      /* פונט קריא לטקסטים קטנים */
+    }
+    
+    /* עיצוב סרגל ניווט */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #222;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-item {
+      color: #fff;
+      font-size: 14px;
+      /* גודל פונט ברור */
+      text-decoration: none;
+      margin: 0 10px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all 0.3s ease;
+      font-family: 'Arial', sans-serif;
+      /* פונט קריא לכפתורי ניווט */
+    }
+    
+    .nav-item i {
+      font-size: 24px;
+      /* גודל אייקון */
+      margin-bottom: 5px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    .nav-item span {
+      font-size: 12px;
+      /* גודל טקסט ברור */
+      text-transform: uppercase;
+      color: #ddd;
+      opacity: 0.8;
+    }
+    
+    .nav-item:hover i {
+      transform: scale(1.2);
+      color: #fff;
+      /* צבע לבן ברור */
+    }
+    
+    .nav-item:hover span {
+      color: #fff;
+      /* צבע לבן ברור */
+      opacity: 1;
+    }
+    
+    /* תגובה למובייל */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+      }
+      
+      .nav-item {
+        margin: 10px 0;
+      }
+      
+      .nav-item i {
+        font-size: 20px;
+        /* התאמת גודל האייקונים */
+      }
+    }
+  </style>
+  
+  
+  <style>
+    .buy-button {
+      background-color: #f0d6af;
+      /* צבע שמנת */
+      color: #383838;
+      /* צבע טקסט כהה לקריאות */
+      border: 2px solid #ffffff;
+      /* מסגרת עדינה */
+      border-radius: 8px;
+      /* קצוות מעוגלים */
+      padding: 10px 20px;
+      /* ריווח פנימי */
+      font-size: 16px;
+      /* גודל טקסט */
+      font-weight: bold;
+      /* טקסט מודגש */
+      cursor: pointer;
+      /* סמן יד */
+      transition: all 0.3s ease;
+      /* מעבר חלק */
+    }
+    
+    .buy-button:hover {
+      background-color: #fff;
+      /* רקע לבן */
+      color: #000;
+      /* טקסט כהה יותר */
+      border-color: #ccc;
+      /* מסגרת יותר כהה */
+      transform: scale(1.05);
+      /* הגדלה עדינה */
+    }
+    
     nav a {
       margin: 0 20px;
       color: #000000;
@@ -316,12 +523,12 @@
       font-size: 1.2em;
       transition: color 0.3s, transform 0.3s;
     }
-
+    
     nav a:hover {
       color: #a67b5b;
       transform: scale(1.1);
     }
-
+    
     nav {
       display: flex;
       justify-content: space-around;
@@ -335,152 +542,291 @@
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
       /* צללית עדינה למראה קליל */
     }
-
+    
     nav a {
       color: #000000;
       /* צבע הסמל עדין */
       text-decoration: none;
       display: inline-block;
     }
-
+    
     nav a:hover {
       color: #000000;
       /* שינוי צבע בהובר */
     }
+    
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+    }
   </style>
-
-
+  
   <section class="products" id="rings">
     <div class="product">
+      <a href="https://ibb.co/9T6dHS4">
+        <img src="https://i.ibb.co/fpfTdLN/9e8c3e2eb642adc4f20a1a4983421cb7.jpg" alt="9e8c3e2eb642adc4f20a1a4983421cb7">
+        <h3>עגילי נוי</h3>
+        <p>צמד עגילים יחודי בהשקפת הטבע 925</p>
+        <p class="price">₪499</p>
+        <button class="buy-button">קנה עכשיו</button>
+    </div>
+    
+    </a>
+    </div>
+    <div class="product">
+      <a href="https://ibb.co/KwfJ8pk">
+        <img src="https://i.ibb.co/M6tmJx4/94f986f45c90fdfd0cd68be063898037.jpg" alt="94f986f45c90fdfd0cd68be063898037">
+        <h3>עגילי פנינה</h3>
+        <p>עגילי פנינה קלאסים</p>
+        <p class="price">₪999</p>
+        <button class="buy-button">קנה עכשיו</button>
+        
+      </a>
+    </div>
+    <div class="product">
+      <a href="https://ibb.co/F6QnypJ">
+        <img src="https://i.ibb.co/LSTvcK6/0fe17a065b78de63faa54449eb37c702.jpg" alt="0fe17a065b78de63faa54449eb37c702">
+        <h3>שרשרת צופן</h3>
+        <p>שרשרת צופן זהב 925</p>
+        <p class="price">₪750</p>
+        <button class="buy-button">קנה עכשיו</button>
+        
+      </a>
+    </div>
+    <div class="product">
+      <a href="https://ibb.co/Kq4sDFg">
+        <img src="https://i.ibb.co/FwZYXg1/110a3d63cab4c4544a12d536884c4170.jpg" alt="110a3d63cab4c4544a12d536884c4170">
+        <h3>טבעת פריחת הזהב</h3>
+        <p>טבעת זהב עם עיטורי פרחים 925</p>
+        <p class="price">₪750</p>
+        <button class="buy-button">קנה עכשיו</button>
+        
+      </a>
+    </div>
+    <div class="product">
+      <a href="https://ibb.co/prw8GKQ">
+        <img src="https://i.ibb.co/5x4ytjk/79561c8255d975cceacf970f37af3c28.jpg" alt="79561c8255d975cceacf970f37af3c28">
+        <h3>עגילי התיכון</h3>
+        <p>עגילי התיכון זהב 925</p>
+        <p class="price">₪1,800</p>
+        <button class="buy-button">קנה עכשיו</button>
+      </a>
+    </div>
+  </section>
+  
+  <sect class="products" id="necklaces">
+    <div class="product">
       <a href="https://ibb.co/VthXRMw">
         <img src="https://i.ibb.co/6mp6zDX/80e87e4c3b0182743b00559eeb3b9feb.jpg" alt="80e87e4c3b0182743b00559eeb3b9feb">
-        <h3>טבעות כסף</h3>
-        <p>הטבעות היפות ביותר שעשויות מכסף 925</p>
+        <h3>עגילי לב היער</h3>
+        <p>עגילים בהשראת סודות היער 925</p>
+        <p class="price">₪1,500</p>
+        <button class="buy-button">קנה עכשיו</button>
+      </a>
+    </div>
+    <div class="product">
+      <a href="https://ibb.co/FxxPgvz">
+        <img src="https://i.ibb.co/ZLLZWsx/f99c0eeb115edbb4cf6562c7c71bd559.jpg" alt="f99c0eeb115edbb4cf6562c7c71bd559">
+        <h3>עגילי גביש האודם</h3>
+        <p>עגילי גביש יחוד אין סופי</p>
+        <p class="price">₪999</p>
+        <button class="buy-button">קנה עכשיו</button>
       </a>
     </div>
     <div class="product">
       <a href="https://ibb.co/kSXYJ1M">
         <img src="https://i.ibb.co/vjk2hYD/ad4e369d02261a9f7384cf77dabdc79f.jpg" alt="ad4e369d02261a9f7384cf77dabdc79f">
-        <h3>טבעות זהב</h3>
-        <p>טבעות בעבודת יד בזהב 18 קראט</p>
+        <h3>עגילי יהלום פרחונים</h3>
+        <p>עגילי יהלום פריחת הדובדבן</p>
+        <p class="price">₪1,500</p>
+        <button class="buy-button">קנה עכשיו</button>
       </a>
     </div>
     <div class="product">
-      <a href="https://ibb.co/kgYFnhH">
-        <img src="https://i.ibb.co/3ytHX0r/223b20ea5a8b476a49467d9b63752e22.jpg" alt="223b20ea5a8b476a49467d9b63752e22">
-        <h3>טבעות יוקרה</h3>
-        <p>טבעות יוקרה מעוצבות עם אבני חן ייחודיות</p>
+      <a href="https://ibb.co/2FD8jCY">
+        <img src="https://i.ibb.co/GdKsV83/a51dd19067539d1849e9e33c4b2c6c99.jpg" alt="a51dd19067539d1849e9e33c4b2c6c99">
+        <h3>עגילי פנינת הזהב</h3>
+        <p>עגילי פנינה זהב 925</p>
+        <p class="price">₪2,300</p>
+        <button class="buy-button">קנה עכשיו</button>
       </a>
     </div>
-  </section>
-
-  <section class="products" id="necklaces">
-    <div class="product">
-      <a href="https://ibb.co/VthXRMw">
-        <img src="https://i.ibb.co/6mp6zDX/80e87e4c3b0182743b00559eeb3b9feb.jpg" alt="80e87e4c3b0182743b00559eeb3b9feb">
-        <h3>שרשראות כסף</h3>
-        <p>שרשראות עדינות עשויות מכסף 925</p>
-      </a>
-    </div>
-    <div class="product">
-      <a href="https://ibb.co/kSXYJ1M">
-        <img src="https://i.ibb.co/vjk2hYD/ad4e369d02261a9f7384cf77dabdc79f.jpg" alt="ad4e369d02261a9f7384cf77dabdc79f">
-        <h3>שרשראות זהב</h3>
-        <p>שרשראות מעוצבות בזהב 18 קראט</p>
-      </a>
-    </div>
-    <div class="product">
-      <a href="https://ibb.co/kgYFnhH">
-        <img src="https://i.ibb.co/3ytHX0r/223b20ea5a8b476a49467d9b63752e22.jpg" alt="223b20ea5a8b476a49467d9b63752e22">
-        <h3>שרשראות יוקרה</h3>
-        <p>שרשראות מעוצבות עם אבני חן איכותיות</p>
-      </a>
-    </div>
-  </section>
-
-  <section class="products" id="bracelets">
-    <div class="product">
-      <a href="https://ibb.co/VthXRMw">
-        <img src="https://i.ibb.co/6mp6zDX/80e87e4c3b0182743b00559eeb3b9feb.jpg" alt="80e87e4c3b0182743b00559eeb3b9feb">
-        <h3>צמידים כסף</h3>
-        <p>צמידים עשויים מכסף 925 בעיצובים מיוחדים</p>
-      </a>
-    </div>
-    <div class="product">
-      <a href="https://ibb.co/kSXYJ1M">
-        <img src="https://i.ibb.co/vjk2hYD/ad4e369d02261a9f7384cf77dabdc79f.jpg" alt="ad4e369d02261a9f7384cf77dabdc79f">
-        <h3>צמידי זהב</h3>
-        <p>צמידים בעבודת יד מזהב 18 קראט</p>
-      </a>
-    </div>
-    <div class="product">
-      <a href="https://ibb.co/kgYFnhH">
-        <img src="https://i.ibb.co/3ytHX0r/223b20ea5a8b476a49467d9b63752e22.jpg" alt="223b20ea5a8b476a49467d9b63752e22">
-        <h3>צמידי יוקרה</h3>
-        <p>צמידים יוקרתיים מעוצבים עם אבני חן</p>
-      </a>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>צור קשר</h2>
-    <form action="#">
-      <label for="name">שם מלא</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">אימייל</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">הודעה</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-
-      <button type="submit">שלח</button>
-    </form>
-  </section>
-  <section id="testimonials">
-    <h2 style="text-align: center; color: #000000; padding: 40px 0;">חוות דעת לקוחות</h2>
-    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 0 20px;">
-      <div style="background-color: #f6f5f4; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
-        <p style="color: #000000; font-style: italic;">״הטבעת שרכשתי פשוט מהממת! קיבלתי מחמאות מכל עבר. תודה רבה על השירות המקצועי!״</p>
-        <p style="font-weight: bold; color: #b3920f;">- מיכל, תל אביב</p>
+    <section class="products" id="jewelry">
+      <div class="product">
+        <a href="https://ibb.co/P5KyM9p">
+          <img src="https://i.ibb.co/JzVTqyL/5775f1807960af09490a0b90dd1fa276.jpg" alt="5775f1807960af09490a0b90dd1fa276">
+          <h3>עגילי פסגות הרוך</h3>
+          <p>עגילים יחודיים בעיצוב מפותל 925</p>
+          <p class="price">₪1,999</p>
+          <button class="buy-button">קנה עכשיו</button>
+          
+        </a>
       </div>
-      <div style="background-color: #f6f5f3; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
-        <p style="color: #161510; font-style: italic;">״שירות מדהים, המשלוח הגיע מהר מאוד והצמיד פשוט מושלם! מומלץ בחום.״</p>
-        <p style="font-weight: bold; color: #b39727;">- יעל, ירושלים</p>
+      <div class="product">
+        <a href="https://ibb.co/xCXX5Py">
+          <img src="https://i.ibb.co/tmQQCkS/8eed744f6af960a48615d420cf816bf5.jpg" alt="8eed744f6af960a48615d420cf816bf5">
+          <h3>עגילי לחישת הרוח</h3>
+          <p>עגילי זהב לבן בעיצוב עדין </p>
+          <p class="price">₪799</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
       </div>
-      <div style="background-color: #f6f5f3; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
-        <p style="color: #161510; font-style: italic;">״פעם ראשונה שאני מזמינה מכם, ואני בטוח שאחזור שוב! חוויית קנייה נהדרת.״</p>
-        <p style="font-weight: bold; color: #ae911c;">- רועי, חיפה</p>
+      <div class="product">
+        <a href="https://ibb.co/xCL8rS1">
+          <img src="https://i.ibb.co/cg3Xsc6/fb5c73255b0603cdf751ea8f818cafb2.jpg" alt="fb5c73255b0603cdf751ea8f818cafb2">
+          <h3>עגילי זהב מסולסלים</h3>
+          <p>עגילים עם עיצוב זהב מסולסל ייחודי</p>
+          <p class="price">₪999</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
       </div>
-      <div style="background-color: #f6f5f3; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
-        <p style="color: #161510; font-style: italic;">״שירות מדהים ואיכות מוצרים מעולה! אני ממליצה לכל החברים שלי.״</p>
-        <p style="font-weight: bold; color: #ae911c;">- שובל, טבריה</p>
+      <div class="product">
+        <a href="https://ibb.co/kgYFnhH">
+          <img src="https://i.ibb.co/3ytHX0r/223b20ea5a8b476a49467d9b63752e22.jpg" alt="223b20ea5a8b476a49467d9b63752e22">
+          <h3>עגילי זהב משובצים</h3>
+          <p>עגילי זהב מעוצבים עם טאץ' יוקרתי</p>
+          <p class="price">1,100</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2024 Raia Jewelry | כל הזכויות שמורות</p>
-  </footer>
-  <button id="back-to-top" onclick="scrollToTop()">↑</button>
-
-  <script>
-    // הצגת כפתור חזרה למעלה כאשר הגולש גולל למטה
-    window.onscroll = function() {
-      let backToTopButton = document.getElementById('back-to-top');
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopButton.style.display = 'block';
-      } else {
-        backToTopButton.style.display = 'none';
+      <div class="product">
+        <a href="https://ibb.co/Jr810b7">
+          <img src="https://i.ibb.co/3SV3G8N/1689af1d77a03a40195000e2f1ec7494.jpg" alt="1689af1d77a03a40195000e2f1ec7494">
+          <h3>עגילי תלתן</h3>
+          <p>עגילי זהב בעיצוב יומיומי קליל 925</p>
+          <p class="price">₪799</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
+      </div>
+      <div class="product">
+        <a href="https://ibb.co/4sknC92">
+          <img src="https://i.ibb.co/dbZwX1t/c96f3e471a6f52dac8d0aeb1509ca5ff.jpg" alt="c96f3e471a6f52dac8d0aeb1509ca5ff">
+          <h3>עגילי שריקת הרוח</h3>
+          <p>עגילי זהב לבן בעיצוב אורגני 925</p>
+          <p class="price">₪799</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
+      </div>
+      <div class="product">
+        <a href="https://ibb.co/GPHnkTj">
+          <img src="https://i.ibb.co/pXhbZyp/18553fa6291163fa53a30afe4091423d.jpg" alt="18553fa6291163fa53a30afe4091423d">
+          <h3>טבעת זהב עם יהלום צבעוני</h3>
+          <p>טבעת זהב משובצת אבני חן</p>
+          <p class="price">1,500</p>
+          <button class="buy-button">קנה עכשיו</button>
+          
+        </a>
+      </div>
+      <div class="product">
+        <a href="https://ibb.co/GQDNSn4">
+          <img src="https://i.ibb.co/5h3wHGg/4d138f7edcdaa7fe252bfff94bc5090a.jpg" alt="4d138f7edcdaa7fe252bfff94bc5090a">
+          <h3>שרשרת סווארווסקי</h3>
+          <p>שרשרת זהב עם אבני סווארווסקי</p>
+          <p class="price">₪950</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
+      </div>
+      <div class="product">
+        <a href="https://ibb.co/S3tXBGc">
+          <img src="https://i.ibb.co/HHtDq3C/1aa6b76661f7791dba496a55937f2ba1.jpg" alt="1aa6b76661f7791dba496a55937f2ba1">
+          <h3>טבעת פנינה שקופה</h3>
+          <p>טבעת עדינה עם פנינה שקופה בעיצוב מיוחד</p>
+          <p class="price">₪750</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
+      </div>
+      <div class="product">
+        <a href="https://ibb.co/qy0wCJk">
+          <img src="https://i.ibb.co/cgbdwYD/b6b2d332aacdfe974258e0d26c2f8c84.jpg" alt="b6b2d332aacdfe974258e0d26c2f8c84">
+          <h3>עגילי זהב עם פנינה</h3>
+          <p>עגילי זהב קלאסיים עם פנינה טבעית</p>
+          <p class="price">₪750</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
+      </div>
+      <div class="product">
+        <a href="https://ibb.co/HPYc7WL">
+          <img src="https://i.ibb.co/FYJQ6Sk/7fb3a105a46ed40d9ebb89344a3d96d3.jpg" alt="7fb3a105a46ed40d9ebb89344a3d96d3">
+          <h3>שרשרת סורג מוזהבת</h3>
+          <p>שרשרת זהב בעיצוב סורג אומנותי 925</p>
+          <p class="price">₪550</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
+      </div>
+      <div class="product">
+        <a href="https://ibb.co/JsDBLvC">
+          <img src="https://i.ibb.co/BC0zDyw/ac3cdd00576a078fd1919c842b8ef451.jpg" alt="ac3cdd00576a078fd1919c842b8ef451">
+          <h3>שרשראות זהב עם אבני חן</h3>
+          <p>שרשראות זהב יוקרתיות עם אבני חן נדירות</p>
+          <p class="price">₪750</p>
+          <button class="buy-button">קנה עכשיו</button>
+        </a>
+      </div>
+    </section>
+    
+    <section id="contact">
+      <h2>צור קשר</h2>
+      <form action="#">
+        <label for="name">שם מלא</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">אימייל</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">הודעה</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <button type="submit">שלח</button>
+      </form>
+    </section>
+    <section id="testimonials">
+      <h2 style="text-align: center; color: #000000; padding: 40px 0;">חוות דעת לקוחות</h2>
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 0 20px;">
+        <div style="background-color: #f6f5f4; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
+          <p style="color: #000000; font-style: italic;">״הטבעת שרכשתי פשוט מהממת! קיבלתי מחמאות מכל עבר. תודה רבה על השירות המקצועי!״</p>
+          <p style="font-weight: bold; color: #b3920f;">- מיכל, תל אביב</p>
+        </div>
+        <div style="background-color: #f6f5f3; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
+          <p style="color: #161510; font-style: italic;">״שירות מדהים, המשלוח הגיע מהר מאוד והצמיד פשוט מושלם! מומלץ בחום.״</p>
+          <p style="font-weight: bold; color: #b39727;">- יעל, ירושלים</p>
+        </div>
+        <div style="background-color: #f6f5f3; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
+          <p style="color: #161510; font-style: italic;">״פעם ראשונה שאני מזמינה מכם, ואני בטוח שאחזור שוב! חוויית קנייה נהדרת.״</p>
+          <p style="font-weight: bold; color: #ae911c;">- רועי, חיפה</p>
+        </div>
+        <div style="background-color: #f6f5f3; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 20px; width: 300px; text-align: center;">
+          <p style="color: #161510; font-style: italic;">״שירות מדהים ואיכות מוצרים מעולה! אני ממליצה לכל החברים שלי.״</p>
+          <p style="font-weight: bold; color: #ae911c;">- שובל, טבריה</p>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <p>&copy; 2024 Raia Jewelry | כל הזכויות שמורות</p>
+    </footer>
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
+    
+    <script>
+      // הצגת כפתור חזרה למעלה כאשר הגולש גולל למטה
+      window.onscroll = function() {
+        let backToTopButton = document.getElementById('back-to-top');
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          backToTopButton.style.display = 'block';
+        } else {
+          backToTopButton.style.display = 'none';
+        }
+      };
+      
+      // פונקציה לגילול חזרה למעלה
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-    };
-
-    // פונקציה לגילול חזרה למעלה
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
-
+    </script>
+    
 </body>
 
-  </html>
+</html>
