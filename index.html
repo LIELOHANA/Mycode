@@ -360,7 +360,84 @@
   
 </head>
 
+<!-- כפתור חזרה למעלה עם מד התקדמות -->
+<button id="back-to-top" onclick="scrollToTop()" aria-label="חזרה למעלה">
+  <svg class="progress-circle" width="60" height="60">
+    <circle cx="30" cy="30" r="28" stroke="#ccc" stroke-width="4" fill="none" />
+    <circle id="progress" cx="30" cy="30" r="28" stroke="#ffffff" stroke-width="4" fill="none" stroke-dasharray="176" stroke-dashoffset="176" />
+  </svg>
+  <span class="arrow">↑</span>
+</button>
 
+<style>
+  #back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #f5e9d4; /* צבע שמנת חזק */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: bounce 2s infinite;
+  }
+
+  #back-to-top:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .progress-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+  }
+
+  .arrow {
+    position: relative;
+    font-size: 24px;
+    color: white;
+    z-index: 1;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+</style>
+
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  window.addEventListener("scroll", function () {
+    const button = document.getElementById("back-to-top");
+    const progress = document.getElementById("progress");
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 176;
+    progress.style.strokeDashoffset = 176 - scrollPercent;
+
+    if (scrollTop > 300) {
+      button.style.display = "flex";
+    } else {
+      button.style.display = "none";
+    }
+  });
+</script>
 <body>
   <header>
     <h1 class="logo">Raia <span>Jewelry</span></h1>
@@ -761,9 +838,21 @@
       </div>
     </section>
     
- <section id="contact">
-  <h2>צור קשר</h2>
-  <form id="contact-form">
+<section id="contact">
+  <!-- אזור לוגו -->
+  <div class="contact-header" style="text-align: center; margin-bottom: 20px;">
+    <img src="https://i.ibb.co/BvTCxVS/Black-White-Elegant-Typography-Monogram-Logo.png" 
+         alt="Logo" 
+         style="max-width: 120px; margin-bottom: 10px;">
+  </div>
+
+  <!-- טופס יצירת קשר עם Web3Forms -->
+  <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" dir="rtl" style="max-width: 500px; margin: auto;">
+    <!-- שדות חבויים ל-Web3Forms -->
+    <input type="hidden" name="access_key" value="2a77723c-f679-4f69-8bde-b12955fd7355">
+    <input type="hidden" name="replyto" value="email">
+    <input type="hidden" name="subject" value="התקבלה הודעה חדשה מהאתר שלך">
+    
     <label for="name">שם מלא</label>
     <input type="text" id="name" name="name" required>
     
@@ -800,48 +889,4 @@
     
     <footer>
       <p>&copy; 2024 Raia Jewelry | כל הזכויות שמורות</p>
-    </footer>
-    <button id="back-to-top" onclick="scrollToTop()">↑</button>
-    
-    <script>
-      // הצגת כפתור חזרה למעלה כאשר הגולש גולל למטה
-      window.onscroll = function() {
-        let backToTopButton = document.getElementById('back-to-top');
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-          backToTopButton.style.display = 'block';
-        } else {
-          backToTopButton.style.display = 'none';
-        }
-      };
-      
-      // פונקציה לגילול חזרה למעלה
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-      
-<!-- טוען את ספריית EmailJS -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("TdO1M0_DWEY87-oU2"); // המפתח הציבורי שלך
-  })();
-</script>
-
-<!-- סקריפט לשליחת טופס 'צור קשר' -->
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    emailjs.sendForm('service_yvvtonw', 'template_58qdgrf', this)
-      .then(function() {
-        alert('ההודעה נשלחה בהצלחה!');
-        document.getElementById('contact-form').reset();
-      }, function(error) {
-        alert('שגיאה בשליחה: ' + JSON.stringify(error));
-        console.error(error);
-      });
-  });
-</script>
-</body>
-
-</html>
+</footer>
