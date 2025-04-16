@@ -1,76 +1,69 @@
 <!DOCTYPE html>
 <html lang="he">
 
-<head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("TdO1M0_DWEY87-oU2"); // שים פה את ה־Public Key שלך
+  })();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Raya Jewelry</title>
   <style>
-    header p {
-      font-size: 2.5em;
-      /* גודל טקסט גדול יותר */
-      margin: 20px 0 0;
-      /* מרווח מעל ומתחת */
-      color: #3C2A21;
-      /* צבע כהה ומיוחד */
-      font-family: 'Times New Roman', serif;
-      /* פונט שונה ומסורתי */
-      font-weight: bold;
-      /* הטקסט מודגש */
-      font-style: italic;
-      /* טקסט באיטליק */
-      letter-spacing: 2px;
-      /* רווח בין האותיות */
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-      /* צללה בולטת */
+    <style>
+  /* עיצוב עבור הפסקה בכותרת */
+  header p {
+    font-size: 2.5em; /* גודל טקסט גדול יותר */
+    margin: 20px 0 0; /* מרווח מעל ומתחת */
+    color: #3C2A21; /* צבע כהה ומיוחד */
+    font-family: 'Times New Roman', serif; /* פונט שונה ומסורתי */
+    font-weight: bold; /* הטקסט מודגש */
+    font-style: italic; /* טקסט באיטליק */
+    letter-spacing: 2px; /* רווח בין האותיות */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* צללה בולטת */
+  }
+
+  /* עיצוב כללי */
+  body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    direction: rtl;
+    background-image: url('https://i.ibb.co/CHfKH13/7c8b65a04e8d4c80f84dadabebfe4182.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    animation: moveBackground 13s linear infinite;
+  }
+
+  @keyframes moveBackground {
+    from {
+      background-position: 0% 75%;
     }
-    
-    /* עיצוב כללי */
-    
+    to {
+      background-position: 75% 75%;
+    }
+  }
+
+  /* התאמה למסכים קטנים */
+  @media (max-width: 768px) {
     body {
-      font-family: 'Georgia', serif;
-      margin: 0;
-      padding: 0;
-      color: #000000;
-      direction: rtl;
-      background-image: url('https://i.ibb.co/CHfKH13/7c8b65a04e8d4c80f84dadabebfe4182.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
+      background-size: auto 100%; /* מתאים לטלפון */
+      background-attachment: scroll; /* מסדר בעיות בגלילה בטלפון */
+    }
+  }
+
+  /* התאמה למסכים גדולים */
+  @media (min-width: 769px) {
+    body {
+      background-size: cover; /* מתאים למחשב */
       background-attachment: fixed;
-      background-position: center;
-      animation: moveBackground 5s linear infinite;
     }
-    
-    @keyframes moveBackground {
-      from {
-        background-position: 0% 50%;
-      }
-      
-      to {
-        background-position: 50% 50%;
-      }
-    }#42445A
-    
-    /* התאמה למסכים קטנים */
-    @media (max-width: 768px) {
-      body {
-        background-size: auto 100%;
-        /* מתאים לטלפון */
-        background-attachment: scroll;
-        /* מסדר בעיות בגלילה בטלפון */
-      }
-    }
-    
-    /* התאמה למסכים גדולים */
-    @media (min-width: 769px) {
-      body {
-        background-size: cover;
-        /* מתאים למחשב */
-        background-attachment: fixed;
-      }
-    }
-    
+  }
     
     /* כותרת ולוגו */
     header {
@@ -413,72 +406,72 @@
     }
     
     /* עיצוב סרגל ניווט */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #222;
-      padding: 15px 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .nav-item {
-      color: #fff;
-      font-size: 14px;
-      /* גודל פונט ברור */
-      text-decoration: none;
-      margin: 0 10px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: all 0.3s ease;
-      font-family: 'Arial', sans-serif;
-      /* פונט קריא לכפתורי ניווט */
-    }
-    
-    .nav-item i {
-      font-size: 24px;
-      /* גודל אייקון */
-      margin-bottom: 5px;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-    
-    .nav-item span {
-      font-size: 12px;
-      /* גודל טקסט ברור */
-      text-transform: uppercase;
-      color: #ddd;
-      opacity: 0.8;
-    }
-    
-    .nav-item:hover i {
-      transform: scale(1.2);
-      color: #fff;
-      /* צבע לבן ברור */
-    }
-    
-    .nav-item:hover span {
-      color: #fff;
-      /* צבע לבן ברור */
-      opacity: 1;
-    }
-    
-    /* תגובה למובייל */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-      }
-      
-      .nav-item {
-        margin: 10px 0;
-      }
-      
-      .nav-item i {
-        font-size: 20px;
-        /* התאמת גודל האייקונים */
-      }
-    }
+  .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.nav-item {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 0 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.nav-item i {
+  font-size: 24px;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-item span {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ddd;
+  opacity: 0.8;
+}
+
+.nav-item:hover i {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+.nav-item:hover span {
+  color: #fff;
+  opacity: 1;
+}
+
+/* תגובה למובייל */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row; /* שמירה על שורת כפתורים גם בנייד */
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .nav-item {
+    margin: 10px;
+  }
+
+  .nav-item i {
+    font-size: 20px;
+  }
+
+  .nav-item span {
+    font-size: 10px;
+  }
+}
   </style>
   
   
@@ -768,21 +761,21 @@
       </div>
     </section>
     
-    <section id="contact">
-      <h2>צור קשר</h2>
-      <form action="#">
-        <label for="name">שם מלא</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">אימייל</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">הודעה</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        
-        <button type="submit">שלח</button>
-      </form>
-    </section>
+ <section id="contact">
+  <h2>צור קשר</h2>
+  <form id="contact-form">
+    <label for="name">שם מלא</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">אימייל</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message">הודעה</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    
+    <button type="submit">שלח</button>
+  </form>
+</section>
     <section id="testimonials">
       <h2 style="text-align: center; color: #000000; padding: 40px 0;">חוות דעת לקוחות</h2>
       <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 0 20px;">
@@ -825,8 +818,30 @@
       function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-    </script>
+      
+<!-- טוען את ספריית EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("TdO1M0_DWEY87-oU2"); // המפתח הציבורי שלך
+  })();
+</script>
+
+<!-- סקריפט לשליחת טופס 'צור קשר' -->
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
     
+    emailjs.sendForm('service_yvvtonw', 'template_58qdgrf', this)
+      .then(function() {
+        alert('ההודעה נשלחה בהצלחה!');
+        document.getElementById('contact-form').reset();
+      }, function(error) {
+        alert('שגיאה בשליחה: ' + JSON.stringify(error));
+        console.error(error);
+      });
+  });
+</script>
 </body>
 
 </html>
